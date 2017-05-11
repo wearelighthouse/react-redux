@@ -1,0 +1,16 @@
+{
+  "name": "xendl",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.16.1",
+    "lodash": "^4.17.4",
+    "normalizr": "^3.2.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "react-hot-loader": "^3.0.0-beta.7"
+  }
+}
