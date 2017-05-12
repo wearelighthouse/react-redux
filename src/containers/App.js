@@ -1,8 +1,12 @@
 import React from 'react';
 
+// Screens
+import ExamplesScreen from '../screens/Example/ExamplesScreen';
+
 const App = () => (
     <div>
-        <h1>Hello</h1>
+    	<h1>React Redux Example</h1>
+        <ExamplesScreen />
     </div>
 );
 
