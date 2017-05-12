@@ -1,15 +1,23 @@
-import { applyMiddleware, createStore } from 'redux';
+import {
+    applyMiddleware,
+    compose,
+    createStore
+} from 'redux';
 import thunk from 'redux-thunk';
 
 import * as api from './api';
 import reducers from './reducers';
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 const configureStore = initialState => {
     const store = createStore(
         reducers,
         initialState,
-        applyMiddleware(
-            thunk.withExtraArgument(api)
+        composeEnhancers(
+            applyMiddleware(
+                thunk.withExtraArgument(api)
+            )
         )
     );
 

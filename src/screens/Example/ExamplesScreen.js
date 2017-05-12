@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 // Actions
@@ -8,7 +9,7 @@ import { fetchExamples } from '../../store/Example/actions';
 import ExampleList from '../../components/Example/ExampleList';
 
 // Selectors
-import { getExamples } from '../../store/Example/selectors';
+import { getExamples, getIsFetching } from '../../store/Example/selectors';
 
 class ExamplesScreen extends Component {
     componentDidMount() {
@@ -16,17 +17,21 @@ class ExamplesScreen extends Component {
     }
 
     render() {
-        return <ExampleList examples={this.props.examples} />;
+        const { examples, isFetching } = this.props;
+
+        return <ExampleList examples={examples} isFetching={isFetching} />;
     }
 }
 
 ExamplesScreen.propTypes = {
     examples: PropTypes.array.isRequired,
-    fetchExamples: PropTypes.func.isRequired
+    fetchExamples: PropTypes.func.isRequired,
+    isFetching: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = state => ({
-    examples: getExamples(state)
+    examples: getExamples(state),
+    isFetching: getIsFetching(state)
 });
 
 const mapDispatchToProps = dispatch => ({
