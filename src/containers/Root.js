@@ -4,10 +4,8 @@ import { Provider } from 'react-redux';
 
 import App from './App';
 
-class Root extends Component
-{
-    render()
-    {
+class Root extends Component {
+    render() {
         const { store } = this.props;
 
         return (

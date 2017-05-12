@@ -7,6 +7,7 @@ export * from './Example/endpoints';
  * Handles status codes 200 <= 500
  * from api requests
  */
+ // eslint-disable-next-line no-unused-vars
 export const checkStatus = (response, dispatch) => {
     switch (response.status) {
         default:
@@ -18,6 +19,7 @@ export const checkStatus = (response, dispatch) => {
  * Handles status codes >= 500
  * from api requests
  */
+ // eslint-disable-next-line no-unused-vars
 export const errorHandler = (dispatch) => {
 	// Handle 500 errors here!
 };
