@@ -3,25 +3,33 @@ import axios from 'axios';
 // Endpoint exports
 export * from './Example/endpoints';
 
-/**
- * Handles status codes 200 <= 500
- * from api requests
- */
- // eslint-disable-next-line no-unused-vars
-export const checkStatus = (response, dispatch) => {
-    switch (response.status) {
-        default:
-            return response;
+export const checkStatus = response => {
+    if (response.status >= 200 &&
+        response.status < 300
+    ) {
+        return response;
     }
+
+    throw response;
 };
 
-/**
- * Handles status codes >= 500
- * from api requests
- */
- // eslint-disable-next-line no-unused-vars
-export const errorHandler = (dispatch) => {
-	// Handle 500 errors here!
+export const handleError = (dispatch, failure) => response => {
+    console.log(response);
+    
+    dispatch(failure());
+
+    switch (response.status) {
+        case 400:
+            break;
+
+        case 401:
+            break;
+
+        case 403:
+            break;
+
+        default:
+    }
 };
 
 /**

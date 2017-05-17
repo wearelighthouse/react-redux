@@ -11,11 +11,8 @@ export const fetchExamples = () => (dispatch, getState, api) => {
     dispatch(fetchExamplesRequest());
 
     return api.fetchExamples()
-        .then(
-            response => api.checkStatus(response, dispatch),
-            () => dispatch(fetchExamplesFailure())
-        )
+        .then(api.checkStatus)
         .then(response => normalize(response.data.examples, [exampleSchema]))
         .then(normalizedData => dispatch(fetchExamplesSuccess(normalizedData)))
-        .catch(api.errorHandler(dispatch));
+        .catch(api.handleError(dispatch, fetchExamplesFailure));
 };

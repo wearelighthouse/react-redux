@@ -6,6 +6,7 @@ export const fetchExamples = () => {
     return new Promise(resolve => {
         setTimeout(() => {
             resolve({
+                status: 200,
                 data: {
                     examples: [
                         {

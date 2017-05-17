@@ -1,5 +1,5 @@
 {
-  "name": "xendl",
+  "name": "wearelighthouse-react-redux",
   "private": true,
   "scripts": {
     "start": "webpack-dev-server",
