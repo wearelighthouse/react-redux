@@ -14,8 +14,6 @@ export const checkStatus = response => {
 };
 
 export const handleError = (dispatch, failure) => response => {
-    console.log(response);
-    
     dispatch(failure());
 
     switch (response.status) {
@@ -36,7 +34,7 @@ export const handleError = (dispatch, failure) => response => {
  * An instance of axios to use for all requests
  */
 export const instance = () => axios.create({
-    baseURL: 'http://localhost/api',
+    baseURL: 'http://localhost:9000',
     headers: {},
-    validateStatus: status => status < 500
+    validateStatus: () => true
 });

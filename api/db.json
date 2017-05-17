@@ -1,0 +1,26 @@
+{
+    "examples": {
+        "examples": [
+            {
+                "id": 1,
+                "name": "Lorem"
+            },
+            {
+                "id": 2,
+                "name": "Ipsum"
+            },
+            {
+                "id": 3,
+                "name": "Dolor"
+            },
+            {
+                "id": 4,
+                "name": "Sit"
+            },
+            {
+                "id": 5,
+                "name": "Amet"
+            }
+        ]
+    }
+}
