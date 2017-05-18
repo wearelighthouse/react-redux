@@ -11,7 +11,7 @@ import ExampleList from '../../components/Example/ExampleList';
 // Selectors
 import { getExamples, getIsFetching } from '../../store/Example/selectors';
 
-class ExamplesScreen extends Component {
+export class ExamplesScreen extends Component {
     componentDidMount() {
         this.props.fetchExamples();
     }
@@ -29,12 +29,12 @@ ExamplesScreen.propTypes = {
     isFetching: PropTypes.bool.isRequired
 };
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
     examples: getExamples(state),
     isFetching: getIsFetching(state)
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
     fetchExamples: () => dispatch(fetchExamples())
 });
 

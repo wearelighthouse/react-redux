@@ -2,11 +2,11 @@ import { combineReducers } from 'redux';
 
 // Reducers
 import entities from './Entity/reducers';
-import examples from './Example/reducers';
+import example from './Example/reducers';
 
 const reducers = combineReducers({
     entities,
-    examples
+    example
 });
 
 export default reducers;

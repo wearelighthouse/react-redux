@@ -2,7 +2,7 @@ import reducers from '../../../src/store/Example/reducers';
 
 import * as actions from '../../../src/store/Example/actions';
 
-describe('Example reducers', () => {
+describe('reducers', () => {
     it('should return the initial state', () => {
         const expected = {
             ids: [],

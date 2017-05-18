@@ -1,12 +1,12 @@
 import { createSelector } from 'reselect';
 
-const getExamplesEntities = state => state.entities.examples;
-const getExamplesIds = state => state.examples.ids;
+const getEntitiesExamples = state => state.entities.examples;
+const getExampleIds = state => state.example.ids;
 
 export const getExamples = createSelector(
-    getExamplesEntities,
-    getExamplesIds,
+    getEntitiesExamples,
+    getExampleIds,
     (examples, ids) => ids.map(id => examples[id])
 );
 
-export const getIsFetching = state => state.examples.isFetching;
+export const getIsFetching = state => state.example.isFetching;

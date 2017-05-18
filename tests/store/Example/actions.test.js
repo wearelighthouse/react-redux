@@ -5,7 +5,7 @@ import configureStore from '../configureStore.mock';
 
 import * as actions from '../../../src/store/Example/actions';
 
-describe('Example actions', () => {
+describe('actions', () => {
     it('should create an action to request examples', () => {
         const expected = {
             type: actions.fetchExamplesRequest.toString()
