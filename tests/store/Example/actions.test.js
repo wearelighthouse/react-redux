@@ -31,7 +31,7 @@ describe('actions', () => {
     });
 });
 
-describe('async actions', () => {
+describe('fetchExamples', () => {
     const mock = new MockAdapter(axios);
 
     afterEach(() => mock.reset());
