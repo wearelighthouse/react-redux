@@ -25,6 +25,7 @@ describe('ExamplesScreen', () => {
     });
 
     it('should fetch examples on mount', () => {
+        expect(props.fetchExamples.mock.calls.length).toBe(0);
         mount(<ExamplesScreen {...props} />);
         expect(props.fetchExamples.mock.calls.length).toBe(1);
     });
