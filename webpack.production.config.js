@@ -5,23 +5,12 @@ module.exports = {
     context: resolve(__dirname, 'src'),
 
     entry: [
-        'react-hot-loader/patch',
-        'webpack-dev-server/client?http://localhost:3000',
-        'webpack/hot/only-dev-server',
         './index.js'
     ],
 
     output: {
         path: resolve(__dirname, 'public'),
         filename: 'bundle.js'
-    },
-
-    devServer: {
-        host: 'localhost',
-        port: 3000,
-        historyApiFallback: true,
-        contentBase: resolve(__dirname, 'public'),
-        hot: true
     },
 
     module: {
@@ -43,10 +32,20 @@ module.exports = {
     },
 
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NamedModulesPlugin(),
-        new webpack.NoEmitOnErrorsPlugin()
+        new webpack.LoaderOptionsPlugin({
+            minimize: true,
+            debug: false
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            beautify: false,
+            mangle: {
+                screw_ie8: true,
+                keep_fnames: true
+            },
+            compress: {
+                screw_ie8: true
+            },
+            comments: false
+        })
     ],
-
-    devtool: 'inline-source-map'
 };

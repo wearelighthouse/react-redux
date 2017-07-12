@@ -1,8 +1,6 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 
-import configureStore from '../../store/configureStore.mock';
-
 import {
     ExamplesScreen,
     mapStateToProps,
@@ -16,7 +14,7 @@ describe('ExamplesScreen', () => {
         isFetching: false
     };
 
-    it('should render ExampleList', () => {
+    it('render', () => {
         const wrapper = shallow(<ExamplesScreen {...props} />);
         const exampleListProps = wrapper.find('ExampleList').props();
 
@@ -24,7 +22,7 @@ describe('ExamplesScreen', () => {
         expect(exampleListProps.isFetching).toEqual(props.isFetching);
     });
 
-    it('should fetch examples on mount', () => {
+    it('componentDidMount', () => {
         expect(props.fetchExamples.mock.calls.length).toBe(0);
         mount(<ExamplesScreen {...props} />);
         expect(props.fetchExamples.mock.calls.length).toBe(1);
@@ -32,7 +30,7 @@ describe('ExamplesScreen', () => {
 });
 
 describe('mapStateToProps', () => {
-    it('should have correct shape', () => {
+    it('shape', () => {
         const props = mapStateToProps({
             entities: { examples: [] },
             example: { ids: [], isFetching: false }
@@ -44,8 +42,8 @@ describe('mapStateToProps', () => {
 });
 
 describe('mapDispatchToProps', () => {
-    it('should have correct shape', () => {
-        const store = configureStore();
+    it('shape', () => {
+        const store = global.configureStore();
 
         const props = mapDispatchToProps(store.dispatch);
 

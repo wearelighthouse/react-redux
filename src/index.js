@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
+import '../assets/scss/style.scss';
+
 import Root from './containers/Root';
 import configureStore from './store/configureStore';
 

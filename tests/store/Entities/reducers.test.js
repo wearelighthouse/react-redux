@@ -1,15 +1,17 @@
-import reducers from '../../../src/store/Entity/reducers';
+import reducers from '../../../src/store/Entities/reducers';
 
-describe('reducers', () => {
-    it('should return the initial state', () => {
+describe('initial state', () => {
+    it('shape', () => {
         const expected = {
             examples: {}
         };
 
         expect(reducers(undefined, {})).toEqual(expected);
     });
+});
 
-    it('should merge entities when in payload', () => {
+describe('cache', () => {
+    it('ANY_OLD_TYPE', () => {
         const state = { examples: {} };
 
         const expected = {

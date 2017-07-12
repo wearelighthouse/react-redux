@@ -2,8 +2,8 @@ import reducers from '../../../src/store/Example/reducers';
 
 import * as actions from '../../../src/store/Example/actions';
 
-describe('reducers', () => {
-    it('should return the initial state', () => {
+describe('initial state', () => {
+    it('shape', () => {
         const expected = {
             ids: [],
             isFetching: false
@@ -11,8 +11,10 @@ describe('reducers', () => {
 
         expect(reducers(undefined, {})).toEqual(expected);
     });
+});
 
-    it('should handle FETCH_EXAMPLES_REQUEST', () => {
+describe('fetchExamples', () => {
+    it(actions.fetchExamplesRequest.toString(), () => {
         const state = {
             ids: [],
             isFetching: false
@@ -26,7 +28,7 @@ describe('reducers', () => {
         expect(reducers(state, actions.fetchExamplesRequest())).toEqual(expected);
     });
 
-    it('should handle FETCH_EXAMPLES_FAILURE', () => {
+    it(actions.fetchExamplesFailure.toString(), () => {
         const state = {
             ids: [],
             isFetching: true
@@ -40,7 +42,7 @@ describe('reducers', () => {
         expect(reducers(state, actions.fetchExamplesFailure())).toEqual(expected);
     });
 
-    it('should handle FETCH_EXAMPLES_SUCCESS', () => {
+    it(actions.fetchExamplesSuccess.toString(), () => {
         const state = {
             ids: [],
             isFetching: true

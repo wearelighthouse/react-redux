@@ -1,7 +1,7 @@
 import { getExamples, getIsFetching } from '../../../src/store/Example/selectors';
 
-describe('getExamples', () => {
-    it('should return entities in order of ids from state', () => {
+describe('selectors', () => {
+    it('getExamples', () => {
         const state = {
             entities: {
                 examples: {
@@ -27,10 +27,8 @@ describe('getExamples', () => {
 
         expect(getExamples(state)).toEqual(expected);
     });
-});
 
-describe('getIsFetching', () => {
-    it('should return isFetching from state', () => {
+    it('getIsFetching', () => {
         const state = {
             example: {
                 isFetching: true

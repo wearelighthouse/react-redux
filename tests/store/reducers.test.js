@@ -1,7 +1,7 @@
 import reducers from '../../src/store/reducers';
 
-describe('reducers', () => {
-    it('should have correct shape', () => {
+describe('initial state', () => {
+    it('shape', () => {
         const state = reducers(undefined, {});
 
         expect(state.entities).toBeDefined();
